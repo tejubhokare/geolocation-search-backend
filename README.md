@@ -16,10 +16,11 @@ Node.js/Express backend solution for a coding challenge, featuring geolocation-b
    ```bash
    npm install
 3. **.env File:** Create a .env file in the root directory. Add the following variables, replacing placeholders with your actual Supabase credentials:
-```bash
+```dotenv
 SUPABASE_URL=<YOUR_SUPABASE_PROJECT_URL>
 SUPABASE_API_KEY=<YOUR_SUPABASE_API_KEY>
 PORT=3000  # Optional - Adjust port if needed
+```
 
 ## Start the Development Server
 
