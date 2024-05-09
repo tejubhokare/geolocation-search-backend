@@ -35,7 +35,6 @@ npm start
 ```bash
 npm test
 ```
-Use code with caution.
 
 ## Notes
 
@@ -192,9 +191,4 @@ This repository contains code for calculating search scores for locations based 
 
 ## Demo
 [![Demo Video](https://img.youtube.com/vi/oZtDxinPE5k/0.jpg)](https://www.youtube.com/watch?v=oZtDxinPE5k)
-
-
-
-
-
 
