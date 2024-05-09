@@ -7,6 +7,10 @@ router.get('/search', async (req, res) => {
     try {
         const { q: searchTerm, latitude, longitude } = req.query;
 
+        if (!searchTerm) {
+            return res.status(400).json({ error: 'Search term is required' });
+        }
+        
         // Split the search term into keywords
         const keywords = searchTerm.split(' ');
         // Build the query with '&' between keywords

@@ -36,10 +36,7 @@ function calculateDistanceScore(location, userLatitude, userLongitude) {
 
     // Limit score to two decimal places
     score = parseFloat(score.toFixed(2));
-
-    console.log('distance score')
-    console.log(score)
-
+    
     return score;
 }
 
