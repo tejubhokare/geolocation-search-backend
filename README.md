@@ -162,18 +162,6 @@ This endpoint allows users to upload CSV files.
 - **URL:** `http://localhost:3001/api/upload`
 - **Request Body:** Form data with a key `csv` and the CSV file as the value.
 
-#### Example Request
-
-```http
-POST /api/upload
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-
-----WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="csv"; filename="example.csv"
-Content-Type: text/csv
-
-[CSV file content]
-----WebKitFormBoundary7MA4YWxkTrZu0gW--
 ```
 
 #### Response
@@ -197,6 +185,8 @@ Content-Type: text/csv
     ]
 }
 ```
+
+
 ## Demo
 [![Demo Video](https://img.youtube.com/vi/oZtDxinPE5k/0.jpg)](https://www.youtube.com/watch?v=oZtDxinPE5k)
 
