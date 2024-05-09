@@ -11,13 +11,15 @@ async function searchLocations(queryTerm) {
 }
 
 async function insertData(batch) {
-  try {
-    await supabase.from(config.LOCATIONS_TABLE).insert(batch);
-    return null; // Indicate success
-  } catch (error) {
+
+  const { data, error } = await supabase.from(config.LOCATIONS_TABLE).upsert(batch, { onConflict: 'street, city, zip_code, county, country' }).select('*');
+   if (error) {
     console.log(error)
     return error.message; // Return detailed error message
-  }
+   } else {
+    return null
+   }
+  
 }
 
 module.exports = { searchLocations, insertData };

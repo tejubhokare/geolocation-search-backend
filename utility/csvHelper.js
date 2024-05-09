@@ -4,7 +4,8 @@ const csvParser = require('csv-parser');
 const expectedHeaders = ['street', 'city', 'zip_code', 'county', 'country', 'latitude', 'longitude', 'time_zone'];
 
 function checkHeaders(headers) {
-  return headers.every(header => expectedHeaders.includes(header));
+  const expectedHeaders = ['street', 'city', 'zip_code', 'county', 'country', 'latitude', 'longitude', 'time_zone'];
+  return headers.every(header => expectedHeaders.includes(header)) && headers.length === expectedHeaders.length;
 }
 
 async function* batchGenerator(stream, batchSize) {
@@ -22,3 +23,4 @@ async function* batchGenerator(stream, batchSize) {
 }
 
 module.exports = { checkHeaders, batchGenerator };
+
