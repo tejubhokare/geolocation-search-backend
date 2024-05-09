@@ -28,21 +28,6 @@ PORT=3000  # Optional - Adjust port if needed
 npm start
 ```
 
-## API Endpoints
-
-- `/api/upload`
-  - Method: POST
-  - Purpose: Uploads a CSV file and loads its data into your Supabase database.
-  - Expects: A `multipart/form-data` body containing a file with the key 'csv'.
-
-- `/api/search`
-  - Method: GET
-  - Parameters:
-    - `q`: Search query string
-    - `latitude`: User's latitude
-    - `longitude`: User's longitude
-  - Response: JSON array of search results with relevance scores
-
 ## Testing
 
 ### Running Tests
@@ -185,6 +170,24 @@ This endpoint allows users to upload CSV files.
     ]
 }
 ```
+
+## Search Score Calculation
+
+This repository contains code for calculating search scores for locations based on proximity to user coordinates and relevance to a search term.
+
+### Approach
+
+1. **Distance Match Score Calculation**:
+   - Calculate the distance between each location and the user's coordinates using the Haversine formula.
+   - Normalize the distance score.
+   
+2. **Text Match Score Calculation**:
+   - Generate searchable text by combining location details.
+   - Compute the Levenshtein distance between the searchable text and the search term.
+   - Normalize the text match score.
+   
+3. **Combining Scores**:
+   - Combine the normalized distance match score (90% weightage) and text match score (10% weightage).
 
 
 ## Demo
